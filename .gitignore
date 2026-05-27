@@ -1,0 +1,20 @@
+# Runtime
+cacp_bus.json
+temp_*.json
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+
+# GPG
+gpg_pubkey.asc
+gpg_batch.conf
