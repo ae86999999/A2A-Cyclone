@@ -1,6 +1,9 @@
 """
-A2A-cyClone Protocol Layer: 常量与状态枚举
+A2A-Cyclone Protocol Layer: 常量与状态枚举
 绝对纯净：不包含任何文件 I/O、网络通讯或业务逻辑。
+
+v0.2.0 新增：AgentRole, MasterRole, MasterState, FailureCategory,
+           CriticalityMask, TopologyRole, TeardownBeaconState, LedgerEventType
 """
 
 from enum import Enum
