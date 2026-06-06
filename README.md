@@ -55,6 +55,7 @@ python slave_node.py
 
 # Terminal 2: Trigger the Master Controller / 终端 2：启动主控调度器
 python master_node.py
+```
 
 **Expected Output / 预期输出**:
 You will see the complete state transition sequence printed in both terminals, including handshake confirmation, periodic lease heartbeats, and final task completion.  
