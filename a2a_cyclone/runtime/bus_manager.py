@@ -62,8 +62,12 @@ class BusManager:
         使用临时文件 + os.replace() 确保写入的原子性。
         在任何文件系统上（Windows/Linux/macOS），读操作要么看到旧文件，
         要么看到完整的新文件，绝不会看到半写入的脏数据。
+
+        临时文件与目标文件在同一目录下创建，避免跨设备移动（Windows
+        ERROR_NOT_SAME_DEVICE）。
         """
-        temp_file = f"temp_{self.bus_id}.json"
+        target_dir = os.path.dirname(self.bus_file_path) or "."
+        temp_file = os.path.join(target_dir, f".temp_{self.bus_id}.json")
         with open(temp_file, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
         os.replace(temp_file, self.bus_file_path)

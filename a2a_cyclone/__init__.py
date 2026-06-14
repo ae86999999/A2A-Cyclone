@@ -5,6 +5,9 @@
 #         多主控协调、动态 AID 分配五大子系统。
 #         引入 Runtime Layer (BusManager, LeaseWatcher,
 #         TeardownHandler, LedgerWriter)。
+#
+# v0.3.0: 新增 Adapter Layer (SlaveAdapter 接口契约、
+#         ShellAdapter、ClaudeCodeAdapter、AdapterRegistry)。
 
 from .protocol import (
     # enums
@@ -24,7 +27,18 @@ from .protocol import (
     assert_ledger_consistency,
 )
 
+from .adapter import (
+    SlaveStatus,
+    SlaveAdapter,
+    TaskPackage,
+    TaskResult,
+    AdapterRegistry,
+    ShellAdapter,
+    ClaudeCodeAdapter,
+)
+
 __all__ = [
+    # protocol
     "BusState",
     "StateMachine",
     "can_transition",
@@ -36,4 +50,12 @@ __all__ = [
     "assert_topology_integrity",
     "assert_cascade_completeness",
     "assert_ledger_consistency",
+    # adapter
+    "SlaveStatus",
+    "SlaveAdapter",
+    "TaskPackage",
+    "TaskResult",
+    "AdapterRegistry",
+    "ShellAdapter",
+    "ClaudeCodeAdapter",
 ]
